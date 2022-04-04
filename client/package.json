@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "electron app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Glenn Ludszuweit",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^18.0.1",
+    "screenshot-desktop": "^1.12.7",
+    "socket.io-client": "^4.4.1",
+    "uuid": "^8.3.2"
+  }
+}
