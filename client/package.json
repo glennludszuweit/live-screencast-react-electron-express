@@ -9,9 +9,10 @@
   "author": "Glenn Ludszuweit",
   "license": "ISC",
   "dependencies": {
-    "electron": "^18.0.1",
-    "screenshot-desktop": "^1.12.7",
-    "socket.io-client": "^4.4.1",
+    "electron": "^11.1.0",
+    "ip": "^1.1.5",
+    "screenshot-desktop": "^1.12.3",
+    "socket.io-client": "^3.0.4",
     "uuid": "^8.3.2"
   }
 }

@@ -1,12 +1,15 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
-const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+const screenshot = require("screenshot-desktop");
+const internalIp = require("ip").address();
+const socket = require("socket.io-client")(`http://${internalIp}:5000`);
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, "index.js"),
+      nodeIntegration: true,
     },
   });
 
@@ -30,6 +33,10 @@ app.on("window-all-closed", () => {
   }
 });
 
-ipcMain.on("start-casting", (event, args) => {});
+ipcMain.on("start-casting", (event, args) => {
+  const uuid = uuidv4();
+  socket.emit("join-message", uuid);
+  event.reply("uuid", uuid);
+});
 
 ipcMain.on("stop-casting", (event, args) => {});
